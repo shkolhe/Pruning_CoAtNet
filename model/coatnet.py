@@ -239,34 +239,40 @@ class CoAtNet(nn.Module):
         return nn.Sequential(*layers)
 
 
-def coatnet_0():
+def coatnet_0(num_classes=10):
     num_blocks = [2, 2, 3, 5, 2]            # L
     channels = [64, 96, 192, 384, 768]      # D
-    return CoAtNet((224, 224), 3, num_blocks, channels, num_classes=1000)
+    return CoAtNet((32, 32), 3, num_blocks, channels, num_classes)
 
 
-def coatnet_1():
+def coatnet_1(num_classes=10):
     num_blocks = [2, 2, 6, 14, 2]           # L
     channels = [64, 96, 192, 384, 768]      # D
-    return CoAtNet((224, 224), 3, num_blocks, channels, num_classes=1000)
+    return CoAtNet((32, 32), 3, num_blocks, channels, num_classes)
 
 
-def coatnet_2():
+def coatnet_2(num_classes=10):
     num_blocks = [2, 2, 6, 14, 2]           # L
     channels = [128, 128, 256, 512, 1026]   # D
-    return CoAtNet((224, 224), 3, num_blocks, channels, num_classes=1000)
+    return CoAtNet((32, 32), 3, num_blocks, channels, num_classes)
 
 
-def coatnet_3():
+def coatnet_3(num_classes=10):
     num_blocks = [2, 2, 6, 14, 2]           # L
     channels = [192, 192, 384, 768, 1536]   # D
-    return CoAtNet((224, 224), 3, num_blocks, channels, num_classes=1000)
+    return CoAtNet((32, 32), 3, num_blocks, channels, num_classes)
 
 
-def coatnet_4():
+def coatnet_4(num_classes=10):
     num_blocks = [2, 2, 12, 28, 2]          # L
     channels = [192, 192, 384, 768, 1536]   # D
-    return CoAtNet((224, 224), 3, num_blocks, channels, num_classes=1000)
+    return CoAtNet((32, 32), 3, num_blocks, channels, num_classes)
+
+
+def coatnet_5(num_classes=10):
+    num_blocks = [2, 2, 12, 28, 2]  # L
+    channels = [192, 256, 512, 1280, 2048]  # D
+    return CoAtNet((32, 32), 3, num_blocks, channels, num_classes)
 
 
 def count_parameters(model):
